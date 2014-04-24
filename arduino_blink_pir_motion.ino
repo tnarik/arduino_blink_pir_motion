@@ -21,17 +21,17 @@ void loop() {
   if ( buttonActivate ) {
     buttonState = digitalRead(pirPin);
 
+    //Serial.print(buttonState);
     if (buttonState == HIGH) {
-      Serial.println("high");
       digitalWrite(ledPin, LOW);
     }
     else {
-      Serial.println("low");
+      Serial.print(millis());
+      Serial.println(" low");
       digitalWrite(ledPin, HIGH);
-      delay(2000);
+      delay(200);
       digitalWrite(ledPin, LOW);
     }
-    delay(1000);
   } else {
     digitalWrite(ledPin, HIGH); // turn the LED on (HIGH is the voltage level)
     delay(1000);                 // wait for a second
